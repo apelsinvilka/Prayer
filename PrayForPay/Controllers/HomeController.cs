@@ -18,7 +18,7 @@ namespace PrayForPay.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
 
             return View();
         }
@@ -80,38 +80,38 @@ namespace PrayForPay.Controllers
 
         public ActionResult PrayerEdit(int id)
         {
-            // Get movie to update
-            var prayerToUpdate = _db.Prayer.First(m => m.Id == id);
+            //// Get movie to update
+            //var prayerToUpdate = _db.Prayer.First(m => m.Id == id);
 
-            ViewData.Model = prayerToUpdate;
+            //ViewData.Model = prayerToUpdate;
             return View();
         }
 
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult PrayerEdit(FormCollection form)
-        {
-            // Get movie to update
-            var id = Int32.Parse(form["id"]);
-            var prayerToUpdate = _db.Prayer.First(m => m.Id === id);
+        //[AcceptVerbs(HttpVerbs.Post)]
+        //public ActionResult PrayerEdit(FormCollection form)
+        //{
+        //    // Get movie to update
+        //    var id = Int32.Parse(form["id"]);
+        //    var prayerToUpdate = _db.Prayer.First(m => m.Id === id);
 
-            // Deserialize (Include white list!)
-            TryUpdateModel(prayerToUpdate, new string[] { "UserId", "PrayerText" }, form.ToValueProvider());
+        //    // Deserialize (Include white list!)
+        //    TryUpdateModel(prayerToUpdate, new string[] { "UserId", "PrayerText" }, form.ToValueProvider());
 
-            // Validate
-            //if (String.IsNullOrEmpty(prayerToUpdate.Title))
-            //    ModelState.AddModelError("Title", "Title is required!");
-            if (String.IsNullOrEmpty(prayerToUpdate.PrayerText))
-                ModelState.AddModelError("Payer", "Prayer text");
+        //    // Validate
+        //    //if (String.IsNullOrEmpty(prayerToUpdate.Title))
+        //    //    ModelState.AddModelError("Title", "Title is required!");
+        //    if (String.IsNullOrEmpty(prayerToUpdate.PrayerText))
+        //        ModelState.AddModelError("Payer", "Prayer text");
 
-            // If valid, save movie to database
-            if (ModelState.IsValid)
-            {
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //    // If valid, save movie to database
+        //    if (ModelState.IsValid)
+        //    {
+        //        _db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            // Otherwise, reshow form
-            return View(prayerToUpdate);
-        }
+        //    // Otherwise, reshow form
+        //    return View(prayerToUpdate);
+        //}
     }
 }

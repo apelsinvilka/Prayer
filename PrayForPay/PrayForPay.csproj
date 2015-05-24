@@ -274,7 +274,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\NewPrayer.cshtml" />
     <Content Include="Views\Home\PrayerFeed.cshtml" />
     <Content Include="Views\Home\PrayerCreate.cshtml" />
   </ItemGroup>
