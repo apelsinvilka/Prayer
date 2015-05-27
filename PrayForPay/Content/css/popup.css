@@ -1,0 +1,178 @@
+.popup{
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  z-index: 9999999;
+  background: rgba(0,0,0, 0.75);
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+
+    -webkit-transition: opacity  0.35s ease;
+    -moz-transition: opacity 0.35s ease;
+    -o-transition: opacity 0.35s ease;
+    transition: opacity 0.35s ease;
+}
+.popup .popUpContainer{
+  width: 100%;
+  max-width: 500px;
+  position: fixed; /* To avoid scroll to target */
+  left: 50%;
+  top: -100vh;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+
+  /* Trick to properly center the element by using negative 
+  1/2 length of element as margin left and top */
+  margin-left: -250px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  z-index: 9999999; 
+}
+.popup h4{
+  padding: 0.5em;
+  text-align: center;
+  color: #444444;
+  margin: 0;
+    margin-top: 10px;
+    font-family: 'Arimo', sans-serif;
+}
+.popup img{
+  width: 100%;
+  display: block;
+}
+.popup article{
+	height: 300px;
+    margin-top: 20%;
+  /*background-color: #e67e22;*/
+}
+/* The cancel button on popup dialog */
+.popup a.closePopUp{
+  color: black;
+  position: absolute;
+  top: -0.6em;
+  right: 0.375em;
+  margin: 0;
+  padding: 5px;
+  font-size: 1.0em;
+  text-decoration: none;
+}
+/* The cancel button on popup dialog */
+.popup a:hover{
+  color: #444444;
+}
+/* When popup is targeted, by clicking on link with #popup in HTML */
+.popup:target{
+  opacity: 1;
+  top: 0;
+}
+.popup .closePopUpOutSide{
+  position: absolute;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999991; 
+}
+.popup:target .popUpContainer{
+  top: 20%;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+}
+
+@media  (max-width: 796px) {
+  .popup .popUpContainer{
+    width: 90%;
+    max-width: none;
+    left: 5%;
+    margin-left: 0;
+  }
+  .popup ul{
+    padding: 0 1em 0 1em;
+  }
+  .popup:target .popUpContainer{
+    top: 25px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+  }
+}
+
+/* SM Buttons */
+
+.entry-social {
+  margin-bottom: 20px;
+  color: rgb(126, 126, 126);
+  display: block;
+  font-family: 'Open Sans', Tahoma, Verdana, Arial, sans-serif, Faruma, Faseyha;
+  font-size: 14px;
+  font-weight: normal;
+  height: auto;
+  line-height: 23.799999237060547px;
+  margin-bottom: 20px;
+  width: 100%;
+  width: 100%;
+  float: left;
+  border: solid 0px #aaa;
+  text-align: center;
+}
+
+.entry-social div {
+  display: block;
+  width: 40%;
+  margin: 5px auto;
+  /*display: inline-block;*/
+  vertical-align: middle;
+}
+
+.entry-social a {
+  text-decoration: none;
+  display: block;
+  padding-left: 20px;
+  color: #FFFFFF !important;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+.entry-social .fb a {
+  padding: 7px 10px 7px 26px;
+  background: #3B5999 url('http://3.bp.blogspot.com/-yqD2363XuAo/UeDk98twSlI/AAAAAAAAArg/kXIzFBWmczM/s1600/fb14.png') no-repeat 10px center;
+}
+
+.entry-social .twitter a {
+  padding: 7px 10px 7px 32px;
+  background: #01BBF6 url('http://3.bp.blogspot.com/-0u8P4VQmEeU/UeDlVdilwcI/AAAAAAAAAro/lGTnlvHGyVw/s1600/twitter14.png') no-repeat 8px center;
+}
+
+.entry-social .gplus a {
+  padding: 7px 10px 7px 32px;
+  background: #D54135 url('http://3.bp.blogspot.com/-A8fFRexz_zk/UeDlgadvpiI/AAAAAAAAArw/TRd7NWNwo9s/s1600/gplus14.png') no-repeat 10px center;
+}
+
+.entry-social .pinterest a {
+  padding: 7px 10px 7px 32px;
+  background: #CB2027 url('http://1.bp.blogspot.com/-v-ZkEQhYpug/UeDl6uIio-I/AAAAAAAAAsA/9rqq2cXT08k/s320/pinterest14.png') no-repeat 10px center;
+}
+
+.entry-social .fb a:hover {
+  background-color: rgb(50, 75, 129);
+}
+
+.entry-social .twitter a:hover {
+  background-color: rgb(1, 159, 211);
+}
+
+.entry-social .gplus a:hover {
+  background-color: rgb(191, 52, 40);
+}
+
+.entry-social .pinterest a:hover {
+  background-color: rgb(174, 28, 35);
+}

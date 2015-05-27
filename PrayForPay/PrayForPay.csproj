@@ -163,17 +163,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\app.css" />
+    <Content Include="Content\css\page.css" />
+    <Content Include="Content\css\popup.css" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\icons-18-black.png" />
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\img_1.jpg" />
+    <Content Include="Content\images\img_2.jpg" />
+    <Content Include="Content\images\img_3.jpg" />
+    <Content Include="Content\images\img_4.jpg" />
+    <Content Include="Content\images\img_5.jpg" />
+    <Content Include="Content\images\img_final.jpg" />
+    <Content Include="Content\images\img_test.jpg" />
     <Content Include="Content\jquery.mobile-1.2.0.css" />
     <Content Include="Content\jquery.mobile-1.2.0.min.css" />
     <Content Include="Content\jquery.mobile.structure-1.2.0.css" />
     <Content Include="Content\jquery.mobile.structure-1.2.0.min.css" />
     <Content Include="Content\jquery.mobile.theme-1.2.0.css" />
     <Content Include="Content\jquery.mobile.theme-1.2.0.min.css" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\index.js" />
+    <Content Include="Content\js\Sortable.js" />
+    <Content Include="Content\js\Sortable.min.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
