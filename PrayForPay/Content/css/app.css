@@ -165,6 +165,10 @@ ul {
     .button {
   font-size: 14px;
     }
+    .regbutton {
+    right: 10px;
+    top: 10px;
+}
 }
 
 

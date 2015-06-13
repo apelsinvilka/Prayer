@@ -61,7 +61,6 @@ C:\apelsinvilka\PrayForPay\dev\PrayForPay\PrayForPay\bin\zh-Hant\System.Spatial.
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\PrayForPay\obj\Debug\PrayForPay.csprojResolveAssemblyReference.cache
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\PrayForPay\obj\Debug\PrayForPay.dll
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\PrayForPay\obj\Debug\PrayForPay.pdb
-C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\obj\Debug\PrayForPay.csprojResolveAssemblyReference.cache
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\obj\Debug\PrayForPay.dll
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\bin\PrayForPay.dll.config
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\bin\PrayForPay.dll

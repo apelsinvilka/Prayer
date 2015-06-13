@@ -2,8 +2,6 @@
     ViewBag.Title = "Home Page";
 }
 
-<h2>@ViewBag.Message</h2>
-
 @*<ul data-role="listview" data-inset="true">
     <li data-role="list-divider">Navigation</li>
     <li>@Html.ActionLink("New prayer", "PrayerCreate", "Home")</li>
@@ -12,7 +10,7 @@
     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 </ul>*@
 
-<div class="header">
+<header>
     <div class="cover-image">
         <h1 id="logo">Слава Богу за все</h1>
         <!-- <iframe src="https://www.youtube.com/embed/KgtcrkI7R58?autoplay=1&controls=0&showinfo=0&autohide=1?html5=1"></iframe> -->
@@ -20,8 +18,9 @@
     <nav role='navigation' id="panel">
         <a id="breathing-arrow">&#8744;</a>
     </nav>
-</div>
+</header>
 <main class="content">
+    <!--HOME1-->
     <div class="wrap" id="home1">
         <div class="container">
             <div style="padding: 20px 20px;">
@@ -29,7 +28,6 @@
             </div>
             <p>Шаг 1. Для создания текста молитвы переместите нужные слова из левого поля и правое. Затем нажмите "Далее".</p>
         </div>
-
         <div class="container">
             <div class="layer block" id="block1">
                 <div class="layer title">Слова</div>
@@ -52,24 +50,19 @@
                 </ul>
             </div>
         </div>
-
-
         <div class="container">
             <div class="button green center" id="btn1">Далее</div>
         </div>
-
-    </div>
+    </div> <!--END OF HOME1-->
+    <!--HOME2-->
     <div class="wrap" id="home2">
         <div class="container">
-            <div style="padding: 20px 20px;">
-
-            </div>
+            <div style="padding: 20px 20px;"></div>
             <p id="#step2">Шаг 2. Для выбора фоновой картинки для Вашей молитвы переместите нужную картинку из левого поля и правое. Затем нажмите "Готово".</p>
         </div>
         <!-- Images -->
         <div class="container">
             <div id="multi">
-
                 <div class="layer block" id="block1">
                     <div class="layer title">Картинки</div>
                     <div id="smlimgs" class="block__list block__list_words">
@@ -86,23 +79,18 @@
                     <div id="imgs" class="block__list block__list_tags">
                         <div class="tile__list" id="bigimg">
                             <img src="~/Content/images/img_5.jpg" />
-
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
         <!--Image Upload + Crop -->
         <!--End of Image Upload + Crop -->
         <div class="container">
             <div class="button green center" id="btn2">Готово</div>
         </div>
-
-    </div>
-    <!-- Result -->
+    </div> <!--END OF HOME2-->
+    <!--HOME3-->
     <div class="wrap" id="home3">
         <div class="container">
             <div style="padding: 20px 20px;">
@@ -113,21 +101,17 @@
 
         <div class="container">
             <!-- Final Image -->
-
-            <img src="images/img_final.jpg" style="width: 40%; display: block; margin: auto;" />
+            <img src="~/Content/images/img_final.jpg" style="width:70%; display:block; margin:auto; margin-top:20px;" />
         </div>
-
-
         <div class="container">
             <a href="#popUp" id="openPopUp" style="text-decoration: none;"><div class="button green center">Поделиться</div></a>
-            <div class="button blue center" id="btn4">Назад</div>
+            <div class="button blue center" id="btn4" style="margin-bottom:50px;">Назад</div>
         </div>
-
         <!-- POP UP -->
         <div id="popUp" class="popup">
             <div class="popUpContainer">
                 <header>
-                    <a href="#!" class="closePopUp">X</a>
+                    <a href="#!" class="closePopUp">&#10005;</a>
                     <!--<h4>Поделитесь с друзьями</h4>-->
                 </header>
                 <article>
@@ -146,17 +130,44 @@
                             <a href="#" target="_blank">Pinterest</a>
                         </div>
                     </div>
-
                 </article>
             </div>
             <a href="#!" class="closePopUpOutSide"></a>
         </div>
+    </div> <!--END OF HOME3-->
+    <!--FIXED REG BUTTON-->
+    @*<div id="reg">
+        <a href="#popUpReg" class="regbutton">&#946;&#935;&#959;&#916;</a>
+    </div>*@
+    <!-- POP UP REGISTRATION -->
+    <div id="popUpReg" class="popup">
+        <div class="popUpContainer">
+            <header>
+                <a href="#!" class="closePopUp">&#10005;</a>
+            </header>
+            <article style="margin-top: 10%;">
+                <!--Registration Form-->
+                <h3 style="text-align: center;">Авторизация / Регистрация</h3>
+                <div class="regcontent">
+                    <div class="inputusername"><input name="username" type="text" class="input username" placeholder="Электронная почта" /></div>
+                    <div class="inputpassword"><input name="password" type="password" class="input password" placeholder="Пароль" /></div>
+                </div>
+                <label class="checkbox">
+                    <input type="checkbox" name="new-user">
+                    <div class="cb-check"></div><span style="font-size:12px;">Новый пользователь</p>
+                </label>
+                <div class="button green center" style="margin-top:70px;">Войти</div>
+            </article>
+        </div>
+        <a href="#!" class="closePopUpOutSide"></a>
     </div>
-</main>
+</main> <!--END OF MAIN-->
 <footer>
     <p>
-        2015 © Творческое объединение <a href="http://monolast.com.ua/" style="color:white;">Моноласт</a>. Аминь.
+        2015 © Творческое объединение <a href="http://monolast.com.ua/" style="color:white;">Моноласт</a>.
     </p>
 </footer>
 <script src="~/Content/js/app.js"></script>
 <script src="~/Content/js/index.js"></script>
+</body>
+</html>

@@ -7,8 +7,8 @@
         <title>@ViewBag.Title</title>
         <meta name="viewport" content="width=device-width" />
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        @Styles.Render("~/Content/mobileCss", "~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+        @*@Styles.Render("~/Content/mobileCss", "~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,30 +29,31 @@
         <script type="text/javascript" src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <script src="~/Content/js/Sortable.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="~/Content/js/regbutton.js"></script>
 
     </head>
     <body>
-      <div data-role="page" data-theme="b">
-            <div data-role="header">
-                @if (IsSectionDefined("Header")) {
-                    @RenderSection("Header")
-                } else {
-                    <h1>@ViewBag.Title</h1>
-                    @Html.Partial("_LoginPartial")
-                }
+        @if (IsSectionDefined("Header"))
+        {
+            @RenderSection("Header")
+        }
+        else
+        {
+            <div id="reg">
+                @Html.Partial("_LoginPartial")
             </div>
-            <div data-role="content">
-                @RenderBody()
-            </div>
-        </div>
+        }
 
-        @Scripts.Render("~/bundles/jquery")
-        <script>
-            $(document).on("mobileinit", function () {
-                $.mobile.ajaxEnabled = false;
-            });
-        </script>
-        @Scripts.Render("~/bundles/jquerymobile")
+            @RenderBody()
+
+
+    @*@Scripts.Render("~/bundles/jquery")
+    <script>
+        $(document).on("mobileinit", function () {
+            $.mobile.ajaxEnabled = false;
+        });
+    </script>
+    @Scripts.Render("~/bundles/jquerymobile")*@
         @RenderSection("scripts", required: false)
     </body>
 </html>
