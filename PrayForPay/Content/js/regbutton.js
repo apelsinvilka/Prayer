@@ -7,7 +7,7 @@ $(document).ready(function() {
 	        regbutton.fadeIn(500); // Time(in Milliseconds) of appearing of the Button when scrolling down.
                 } else {
 	        regbutton.fadeOut(500); // Time(in Milliseconds) of disappearing of Button when scrolling up.
-	        regbutton.html('&#946;&#935;&#959;&#916;');
+	        //regbutton.html('&#946;&#935;&#959;&#916;');
 		}
 	});
   /*$('.regbutton').click(function(event) {

@@ -49,6 +49,7 @@ namespace PrayForPay.Controllers
 
         public ActionResult PrayerCreate()
         {
+            
             return View();
         }
 
