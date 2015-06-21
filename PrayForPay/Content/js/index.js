@@ -11,7 +11,15 @@ $(document).ready(function() {
     $("#btn1").click(function(){
         $("#home2").slideDown();
         $("#btn1").fadeOut();
-        $("html, body").animate({scrollTop: $("#home2").offset().top}, 500);
+        $("html, body").animate({ scrollTop: $("#home2").offset().top }, 500);
+
+        var strPrayer = '';
+        $('#bar').children().each(function (i, elem) {
+            strPrayer += $(elem).text();
+        });
+
+        $('#PrayerText').val(strPrayer);
+
     });
     
         $("#btn2").click(function(){
@@ -30,4 +38,12 @@ $(document).ready(function() {
         $("html, body").animate({scrollTop: $("#home1").offset().top}, 500);
     });
     
+        //$('#prayerCreate').click(function () {
+        //    debugger
+
+            
+
+
+        //});
+
 });

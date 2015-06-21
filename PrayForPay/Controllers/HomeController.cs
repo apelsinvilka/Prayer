@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PrayForPay.Models;
+using System.Web.Security;
 
 namespace PrayForPay.Controllers
 {
@@ -58,25 +59,37 @@ namespace PrayForPay.Controllers
         {
             var prayerToAdd = new Prayer();
 
+            MembershipUser user = Membership.GetUser(User.Identity.Name);
+            if (user == null)
+            {
+                throw new InvalidOperationException("User [" +
+                    User.Identity.Name + " ] not found.");
+            }
+
+            // Do whatever u want with the unique identifier.
+            Guid guid = (Guid)user.ProviderUserKey;
+
             // Deserialize (Include white list!)
             TryUpdateModel(prayerToAdd, new string[] { "UserId", "PrayerText" }, form.ToValueProvider());
 
+            prayerToAdd.UserId = guid;
+
             // Validate
             //if (String.IsNullOrEmpty(prayerToAdd.UserId))
-            //    ModelState.AddModelError("Title", "Title is required!");
+            //    ModelState.AddModelError("UserId", "UserId is required!");
             if (String.IsNullOrEmpty(prayerToAdd.PrayerText))
                 ModelState.AddModelError("Payer", "Prayer text!");
 
             // If valid, save movie to database
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 _db.AddToPrayer(prayerToAdd);
                 _db.SaveChanges();
                 return RedirectToAction("PrayerFeed");
-            }
+            //}
 
             // Otherwise, reshow form
-            return View(prayerToAdd);
+            //return View(prayerToAdd);
         }
 
         public ActionResult PrayerEdit(int id)

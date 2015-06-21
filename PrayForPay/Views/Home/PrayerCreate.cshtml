@@ -27,7 +27,7 @@
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
 
-    <div class="editor-field">
+    <div class="editor-field" style="display:none">
         @Html.EditorFor(model => model.UserId)
         @Html.ValidationMessageFor(model => model.UserId)
     </div>
@@ -126,7 +126,7 @@
             </div>
             <div class="container">
                 <a href="#popUp" id="openPopUp" style="text-decoration: none;">
-                    <div class="button green center"><input type="submit" value="Create" /></div>
+                    <div class="button green center"><input id="prayerCreate" type="submit" value="Create" /></div>
                 </a>
                 <div class="button blue center" id="btn4" style="margin-bottom:50px;">
                     Назад
