@@ -160,6 +160,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Prayer.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Repository\IRepository.cs" />
+    <Compile Include="Models\Repository\RepositoryPreyer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
