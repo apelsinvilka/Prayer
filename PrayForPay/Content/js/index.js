@@ -3,6 +3,22 @@ $(document).ready(function() {
     TweenMax.from($("#logo"), 0.6, {opacity:0, delay:0.4, ease:Power2.easeOut, y:-200});
     TweenMax.from($("#panel"), 0.6, {opacity:0, delay:0.6, ease:Power2.easeOut, y:200});
     
+    var textCreate = function () {
+        
+        var strPrayer = '';
+        $('#bar').children().each(function (i, elem) {
+            var strSpace = '';
+            debugger
+            if (strPrayer === '') {
+                strSpace = '';
+            } else { strSpace = ' ' }
+
+            strPrayer += strSpace + $(elem).text();
+
+        });
+
+        $('#PrayerText').val(strPrayer);
+    }
     
     $("#breathing-arrow").click(function() {
         $("html, body").animate({scrollTop: $("#home1").offset().top}, 500);
@@ -13,12 +29,7 @@ $(document).ready(function() {
         $("#btn1").fadeOut();
         $("html, body").animate({ scrollTop: $("#home2").offset().top }, 500);
 
-        var strPrayer = '';
-        $('#bar').children().each(function (i, elem) {
-            strPrayer += $(elem).text();
-        });
-
-        $('#PrayerText').val(strPrayer);
+        textCreate();
 
     });
     
@@ -27,7 +38,8 @@ $(document).ready(function() {
         $("footer").slideDown();
         $("#home1").fadeOut();
         $("#home2").fadeOut();
-        $("html, body").animate({scrollTop: $("#home3").offset().top}, 500);
+        $("html, body").animate({ scrollTop: $("#home3").offset().top }, 500);
+        textCreate();
     });
 
         $("#btn4").click(function(){
@@ -35,7 +47,8 @@ $(document).ready(function() {
         $("#btn1").fadeIn();
         $("#home3").fadeOut();
         $("footer").fadeOut();
-        $("html, body").animate({scrollTop: $("#home1").offset().top}, 500);
+        $("html, body").animate({ scrollTop: $("#home1").offset().top }, 500);
+        textCreate();
     });
     
         //$('#prayerCreate').click(function () {

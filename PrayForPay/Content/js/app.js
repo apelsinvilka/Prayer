@@ -75,7 +75,9 @@
 		onUpdate: function (evt){ console.log('onUpdate.bar:', evt.item); },
 		onRemove: function (evt){ console.log('onRemove.bar:', evt.item); },
 		onStart:function(evt){ console.log('onStart.foo:', evt.item);},
-		onEnd: function(evt){ console.log('onEnd.foo:', evt.item);}
+		onEnd: function (evt) { console.log('onEnd.foo:', evt.item); }
+
+
 	});
 
 	// Images
@@ -92,6 +94,8 @@
 		});
 	});
 
+
+	
 
 })();
 

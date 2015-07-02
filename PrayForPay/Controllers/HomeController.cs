@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using PrayForPay.Models;
 using System.Web.Security;
+using System.Drawing;
 
 namespace PrayForPay.Controllers
 {
@@ -83,8 +84,27 @@ namespace PrayForPay.Controllers
             // If valid, save movie to database
             //if (ModelState.IsValid)
             //{
-                _db.AddToPrayer(prayerToAdd);
-                _db.SaveChanges();
+            //_db.AddToPrayer(prayerToAdd);
+            //_db.SaveChanges();
+
+
+            //Start Create PIC
+
+                Image pic = Image.FromFile("C:\\img_1.jpg");
+
+                Image picNew = Image.FromFile("C:\\img_1.jpg");
+
+                using (Graphics g = Graphics.FromImage(pic))
+                {
+                    Font drawFont = new Font("Arial", 16);
+                    SolidBrush drawBrush = new SolidBrush(Color.White);
+                    g.DrawImage(picNew, new Point(0, 0)); //логотип
+                    g.DrawString(prayerToAdd.PrayerText, drawFont, drawBrush, new Point(100, 50));
+                }
+                pic.Save("C:\\ImageF.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            //END Create PIC
+
                 return RedirectToAction("PrayerFeed");
             //}
 
