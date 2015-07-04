@@ -173,11 +173,13 @@
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\ImageF.jpg" />
     <Content Include="Content\images\img_1.jpg" />
     <Content Include="Content\images\img_2.jpg" />
     <Content Include="Content\images\img_3.jpg" />
     <Content Include="Content\images\img_4.jpg" />
     <Content Include="Content\images\img_5.jpg" />
+    <Content Include="Content\images\img_empty.jpg" />
     <Content Include="Content\images\img_final.jpg" />
     <Content Include="Content\images\img_home.jpg" />
     <Content Include="Content\images\img_test.jpg" />
@@ -252,6 +254,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Prayer.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="image\ImageF.jpg" />
+    <Content Include="image\img_1.jpg" />
+    <Content Include="image\img_2.jpg" />
+    <Content Include="image\img_3.jpg" />
+    <Content Include="image\img_4.jpg" />
+    <Content Include="image\img_5.jpg" />
+    <Content Include="image\img_empty.jpg" />
     <Content Include="Models\Prayer.edmx.diagram">
       <DependentUpon>Prayer.edmx</DependentUpon>
     </Content>

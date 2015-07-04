@@ -90,9 +90,12 @@ namespace PrayForPay.Controllers
 
             //Start Create PIC
 
-                Image pic = Image.FromFile("C:\\img_1.jpg");
+                string path = AppDomain.CurrentDomain.BaseDirectory + "image";
+                string picPath = System.IO.Path.Combine(path, "img_empty.jpg");
+                Image pic = Image.FromFile(picPath);
 
-                Image picNew = Image.FromFile("C:\\img_1.jpg");
+                string picPathNew = System.IO.Path.Combine(path, "img_1.jpg");
+                Image picNew = Image.FromFile(picPathNew);
 
                 using (Graphics g = Graphics.FromImage(pic))
                 {
@@ -101,11 +104,13 @@ namespace PrayForPay.Controllers
                     g.DrawImage(picNew, new Point(0, 0)); //логотип
                     g.DrawString(prayerToAdd.PrayerText, drawFont, drawBrush, new Point(100, 50));
                 }
-                pic.Save("C:\\ImageF.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                string picPathFinal = System.IO.Path.Combine(path, "ImageF.jpg");
+                pic.Save(picPathFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
 
             //END Create PIC
 
-                return RedirectToAction("PrayerFeed");
+                return RedirectToAction("PrayerCreate");
             //}
 
             // Otherwise, reshow form
