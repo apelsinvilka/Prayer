@@ -254,6 +254,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Prayer.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="image\Filter_Frame.png" />
     <Content Include="image\ImageF.jpg" />
     <Content Include="image\img_1.jpg" />
     <Content Include="image\img_2.jpg" />

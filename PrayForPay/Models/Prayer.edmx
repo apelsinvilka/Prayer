@@ -9,9 +9,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="None" />
           <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="PrayerText" Type="text" Nullable="false" />
+          <Property Name="PrayerResult" Type="image" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ModelsStoreContainer">
           <EntitySet Name="Prayer" EntityType="Self.Prayer" Schema="dbo" store:Type="Tables" />
@@ -24,9 +25,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Id" Type="Guid" annotation:StoreGeneratedPattern="None" Nullable="false" />
           <Property Name="UserId" Type="Guid" Nullable="false" />
           <Property Name="PrayerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrayerResult" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityContainer Name="PrayerDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Prayer" EntityType="Self.Prayer" />
@@ -40,6 +42,7 @@
           <EntitySetMapping Name="Prayer">
             <EntityTypeMapping TypeName="Models.Prayer">
               <MappingFragment StoreEntitySet="Prayer">
+                <ScalarProperty Name="PrayerResult" ColumnName="PrayerResult" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="PrayerText" ColumnName="PrayerText" />

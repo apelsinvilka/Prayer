@@ -123,4 +123,3 @@ C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\bin\ru\System.Spatia
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\bin\zh-Hans\System.Spatial.resources.dll
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\bin\zh-Hant\System.Spatial.resources.dll
 C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\obj\Debug\PrayForPay.pdb
-C:\apelsinvilka\PrayForPay\dev\PrayForPay\Prayer\PrayForPay\obj\Debug\PrayForPay.csprojResolveAssemblyReference.cache

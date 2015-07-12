@@ -4,9 +4,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="None" />
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="PrayerText" Type="text" Nullable="false" />
+    <Property Name="PrayerResult" Type="image" Nullable="false" />
   </EntityType>
   <EntityContainer Name="ModelsStoreContainer">
     <EntitySet Name="Prayer" EntityType="Self.Prayer" Schema="dbo" store:Type="Tables" />

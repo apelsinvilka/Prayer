@@ -117,12 +117,14 @@ namespace PrayForPay.Models
         /// <param name="id">Initial value of the Id property.</param>
         /// <param name="userId">Initial value of the UserId property.</param>
         /// <param name="prayerText">Initial value of the PrayerText property.</param>
-        public static Prayer CreatePrayer(global::System.Guid id, global::System.Guid userId, global::System.String prayerText)
+        /// <param name="prayerResult">Initial value of the PrayerResult property.</param>
+        public static Prayer CreatePrayer(global::System.Guid id, global::System.Guid userId, global::System.String prayerText, global::System.Byte[] prayerResult)
         {
             Prayer prayer = new Prayer();
             prayer.Id = id;
             prayer.UserId = userId;
             prayer.PrayerText = prayerText;
+            prayer.PrayerResult = prayerResult;
             return prayer;
         }
 
@@ -204,6 +206,30 @@ namespace PrayForPay.Models
         private global::System.String _PrayerText;
         partial void OnPrayerTextChanging(global::System.String value);
         partial void OnPrayerTextChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] PrayerResult
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_PrayerResult);
+            }
+            set
+            {
+                OnPrayerResultChanging(value);
+                ReportPropertyChanging("PrayerResult");
+                _PrayerResult = StructuralObject.SetValidValue(value, false, "PrayerResult");
+                ReportPropertyChanged("PrayerResult");
+                OnPrayerResultChanged();
+            }
+        }
+        private global::System.Byte[] _PrayerResult;
+        partial void OnPrayerResultChanging(global::System.Byte[] value);
+        partial void OnPrayerResultChanged();
 
         #endregion
 

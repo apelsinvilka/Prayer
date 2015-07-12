@@ -4,9 +4,10 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Id" Type="Guid" annotation:StoreGeneratedPattern="None" Nullable="false" />
     <Property Name="UserId" Type="Guid" Nullable="false" />
     <Property Name="PrayerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrayerResult" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityContainer Name="PrayerDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Prayer" EntityType="Self.Prayer" />

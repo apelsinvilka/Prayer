@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="26f97c6fef3c4d5d9f70cea93648c74f" Name="Diagram1">
-        <EntityTypeShape EntityType="Models.Prayer" Width="3.5" PointX="0.625" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Prayer" Width="3.5" PointX="1" PointY="1" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Prayer">
       <EntityTypeMapping TypeName="Models.Prayer">
         <MappingFragment StoreEntitySet="Prayer">
+          <ScalarProperty Name="PrayerResult" ColumnName="PrayerResult" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="PrayerText" ColumnName="PrayerText" />
