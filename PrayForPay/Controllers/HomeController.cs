@@ -61,6 +61,7 @@ namespace PrayForPay.Controllers
             return (Image)(new Bitmap(imgToResize, size));
         }
 
+        [Authorize]
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult PrayerCreate(FormCollection form)
         {
