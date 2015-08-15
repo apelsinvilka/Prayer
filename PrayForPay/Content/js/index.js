@@ -24,7 +24,7 @@ $(document).ready(function() {
 
         var strImage = '';
         $('#bigimg').children().each(function (i, elem) {
-            debugger
+            
 
             strImage = $(elem).attr( 'src' );
             strImage = strImage.substring(strImage.lastIndexOf('/') + 1);

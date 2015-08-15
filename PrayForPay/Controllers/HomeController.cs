@@ -93,56 +93,8 @@ namespace PrayForPay.Controllers
             
             //Start Create PIC
 
-                string path = AppDomain.CurrentDomain.BaseDirectory + "image";
-                string picPath = System.IO.Path.Combine(path, "img_empty.jpg");
-                Image pic = Image.FromFile(picPath);
-                pic = resizeImage(pic, new Size(700, 700));
+            MemoryStream ms = CrateNewPicPrayer(form, prayerToAdd);
 
-                string picPathFilter = System.IO.Path.Combine(path, "Filter_Frame.png");
-                Image picFilter = Image.FromFile(picPathFilter);
-                picFilter = resizeImage(picFilter, new Size(700, 700));
-
-                string picPathNew = System.IO.Path.Combine(path, form["imageId"]);
-                Image picNew = Image.FromFile(picPathNew);
-                picNew = resizeImage(picNew, new Size(700, 700));
-
-                using (Graphics g = Graphics.FromImage(pic))
-                {
-                    Font drawFont = new Font("PT Serif", 24);
-                    SolidBrush drawBrush = new SolidBrush(Color.White);
-                    g.DrawImage(picNew, new Point(0, 0));
-                    g.DrawImage(picFilter, new Point(0, 0));
-
-                    //Start create text
-
-                    // Create string to draw.
-                    String drawString = prayerToAdd.PrayerText;
-
-                    // Create rectangle for drawing.
-                    float x = 0.0F;
-                    float y = 250.0F;
-                    float width = 700.0F;
-                    float height = 700.0F;
-                    RectangleF drawRect = new RectangleF(x, y, width, height);
-
-                    // Draw rectangle to screen.
-                    Pen blackPen = new Pen(Color.Empty);
-                    g.DrawRectangle(blackPen, x, y, width, height);
-
-                    // Set format of string.
-                    StringFormat drawFormat = new StringFormat();
-                    drawFormat.Alignment = StringAlignment.Center;
-
-                    // Draw string to screen.
-                    g.DrawString(drawString, drawFont, drawBrush, drawRect, drawFormat);
-
-                    //End create text
-                }
-
-                string picPathFinal = System.IO.Path.Combine(path, "ImageF.jpg");
-                pic.Save(picPathFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
-                MemoryStream ms = new MemoryStream();
-                pic.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
             //END Create PIC
 
             // Save picture to database
@@ -155,11 +107,67 @@ namespace PrayForPay.Controllers
             _db.AddToPrayer(prayerToAdd);
             _db.SaveChanges();
 
-                return RedirectToAction("PrayerCreate");
+                //return RedirectToAction("PrayerCreate");
             //}
 
             //// Otherwise, reshow form
-            //return View(prayerToAdd);
+            return View(prayerToAdd);
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        private static MemoryStream CrateNewPicPrayer(FormCollection form, Prayer prayerToAdd)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + "image";
+            string picPath = System.IO.Path.Combine(path, "img_empty.jpg");
+            Image pic = Image.FromFile(picPath);
+            pic = resizeImage(pic, new Size(700, 700));
+
+            string picPathFilter = System.IO.Path.Combine(path, "Filter_Frame.png");
+            Image picFilter = Image.FromFile(picPathFilter);
+            picFilter = resizeImage(picFilter, new Size(700, 700));
+
+            string picPathNew = System.IO.Path.Combine(path, form["imageId"]);
+            Image picNew = Image.FromFile(picPathNew);
+            picNew = resizeImage(picNew, new Size(700, 700));
+
+            using (Graphics g = Graphics.FromImage(pic))
+            {
+                Font drawFont = new Font("PT Serif", 24);
+                SolidBrush drawBrush = new SolidBrush(Color.White);
+                g.DrawImage(picNew, new Point(0, 0));
+                g.DrawImage(picFilter, new Point(0, 0));
+
+                //Start create text
+
+                // Create string to draw.
+                String drawString = prayerToAdd.PrayerText;
+
+                // Create rectangle for drawing.
+                float x = 0.0F;
+                float y = 250.0F;
+                float width = 700.0F;
+                float height = 700.0F;
+                RectangleF drawRect = new RectangleF(x, y, width, height);
+
+                // Draw rectangle to screen.
+                Pen blackPen = new Pen(Color.Empty);
+                g.DrawRectangle(blackPen, x, y, width, height);
+
+                // Set format of string.
+                StringFormat drawFormat = new StringFormat();
+                drawFormat.Alignment = StringAlignment.Center;
+
+                // Draw string to screen.
+                g.DrawString(drawString, drawFont, drawBrush, drawRect, drawFormat);
+
+                //End create text
+            }
+
+            string picPathFinal = System.IO.Path.Combine(path, "ImageF.jpg");
+            pic.Save(picPathFinal, System.Drawing.Imaging.ImageFormat.Jpeg);
+            MemoryStream ms = new MemoryStream();
+            pic.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms;
         }
 
         public ActionResult PrayerEdit(int id)
