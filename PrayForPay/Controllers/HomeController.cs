@@ -56,27 +56,14 @@ namespace PrayForPay.Controllers
             return View();
         }
 
-        [Authorize]
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult PrayerCreate(FormCollection form, Prayer prayerToAdd)
-        {
-
-            return View();
-        }
-
         public static Image resizeImage(Image imgToResize, Size size)
         {
             return (Image)(new Bitmap(imgToResize, size));
         }
 
-        public ActionResult PrayerCreatePic()
-        {
-        
-            return PartialView();
-        }
-
-   [HttpPost]
-        public ActionResult PrayerCreatePic(FormCollection form)
+        [Authorize]
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult PrayerCreate(FormCollection form)
         {
             var prayerToAdd = new Prayer();
 
@@ -124,7 +111,7 @@ namespace PrayForPay.Controllers
             //}
 
             //// Otherwise, reshow form
-            return PartialView(prayerToAdd);
+            return View(prayerToAdd);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
