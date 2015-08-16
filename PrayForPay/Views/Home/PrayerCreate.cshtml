@@ -1,6 +1,13 @@
 ﻿@model PrayForPay.Models.Prayer
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Создайте молитву";
+    var options = new AjaxOptions()
+    {
+        UpdateTargetId = "finalImg",
+        Url = Url.Action("PrayerCreatePic"),
+        //LoadingElementId = "loadingIndicator",
+        //Confirm = "Вы хотите запросить новые данные?"
+    };
 }
 
 <header>
@@ -14,7 +21,7 @@
 </header>
 <main class="content">
 
-    @using (Html.BeginForm())
+    @using (Ajax.BeginForm(options))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -116,10 +123,10 @@
                 <p>Шаг 3. Для того, чтобы поделиться Вашей готовой молитвой с друзьями, нажмите "Поделиться". Если Вы хотите создать новую молитву, нажмите "Назад".</p>
             </div>
 
-            <div class="container">
-                <!-- Final Image -->
-                <img src="~/image/ImageF.jpg" style="width:70%; display:block; margin:auto; margin-top:20px;" />
+            <div id="finalImg" class="container">
+                @Html.Action("PrayerCreatePic")
             </div>
+
             <div class="container">
                 <a href="#popUp" id="openPopUp" style="text-decoration: none;">
                     <div class="button green center">Поделиться</div>
@@ -191,6 +198,9 @@
 
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
+        <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+        <script src="~/Content/js/app.js"></script>
+        <script src="~/Content/js/index.js"></script>
     }
 
 
@@ -203,6 +213,7 @@
         2015 © Творческое объединение <a href="http://monolast.com.ua/" style="color:white;">Моноласт</a>.
     </p>
 </footer>
-<script src="~/Content/js/app.js"></script>
-<script src="~/Content/js/index.js"></script>
+
+
+
 
