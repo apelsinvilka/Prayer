@@ -179,7 +179,6 @@
     <Content Include="Content\images\img_3.jpg" />
     <Content Include="Content\images\img_4.jpg" />
     <Content Include="Content\images\img_5.jpg" />
-    <Content Include="Content\images\img_empty.jpg" />
     <Content Include="Content\images\img_final.jpg" />
     <Content Include="Content\images\img_home.jpg" />
     <Content Include="Content\images\img_test.jpg" />
@@ -265,6 +264,7 @@
     <Content Include="Models\Prayer.edmx.diagram">
       <DependentUpon>Prayer.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\publish.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
